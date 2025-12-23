@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Digital Brain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="digitalbrain_logo.png" alt="Digital Brain Logo">
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li class="mobile-only">
+                        <a href="login.html" class="btn btn-login mobile-login-btn">Log in</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-login">Log in</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="dash-header">
+                <div>
+                    <h1 class="greeting">Hello, <span id="client-name" class="red-text">Client</span>.</h1>
+                    <p class="last-login">Last login: <span id="last-login-date">Today</span></p>
+                </div>
+                <div class="client-logo-wrapper">
+                    <img id="client-logo" src="" alt="Client Logo" style="display:none;">
+                </div>
+            </div>
+
+            <div class="metrics-grid dash-metrics">
+                <div class="metric-card">
+                    <div class="icon-bg red"><i class="fas fa-rocket"></i></div>
+                    <div class="metric-info">
+                        <h3>Active Projects</h3>
+                        <p id="metric-active">0</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon-bg black"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <div class="metric-info">
+                        <h3>Pending Invoices</h3>
+                        <p id="metric-pending">RM 0</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon-bg red"><i class="fas fa-chart-line"></i></div>
+                    <div class="metric-info">
+                        <h3>Leads This Month</h3>
+                        <p id="metric-leads">0</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon-bg black"><i class="fas fa-clock"></i></div>
+                    <div class="metric-info">
+                        <h3>Hours Used</h3>
+                        <p id="metric-hours">0 / 0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-content-split">
+                
+                <div class="dash-main">
+                    
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h2>Current Projects</h2>
+                            <button class="btn-text">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Service</th>
+                                        <th>Deadline</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="project-table-body">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h2>Recent Updates</h2>
+                        </div>
+                        <ul class="update-list" id="updates-list">
+                            </ul>
+                    </div>
+                </div>
+
+                <div class="dash-sidebar">
+                    
+                    <div class="dash-card manager-card">
+                        <h3>Project Manager</h3>
+                        <div class="manager-profile">
+                            <div class="manager-img">
+                                <img src="https://ui-avatars.com/api/?name=Admin+User&background=ed1c24&color=fff" alt="Manager">
+                            </div>
+                            <div class="manager-details">
+                                <h4 id="manager-name">Digital Brain Admin</h4>
+                                <p>Senior Strategist</p>
+                                <a href="mailto:support@digitalbrain.my" class="contact-link">support@digitalbrain.my</a>
+                            </div>
+                        </div>
+                        </div>
+
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h2>Unpaid Invoices</h2>
+                        </div>
+                        <div class="invoice-list" id="invoice-list">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

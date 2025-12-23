@@ -1,0 +1,126 @@
+/* DASHBOARD SPECIFIC STYLES */
+
+.dashboard-section {
+    padding: 50px 0 80px;
+    background-color: #f9f9f9;
+    min-height: 90vh;
+}
+
+/* Header Area */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.greeting { font-size: 2.5rem; margin-bottom: 5px; }
+.last-login { color: #888; font-size: 0.9rem; }
+.client-logo-wrapper img { height: 50px; opacity: 0.8; }
+
+/* Metrics Grid */
+.dash-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s;
+}
+
+.metric-card:hover { transform: translateY(-5px); }
+
+.icon-bg {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+.icon-bg.red { background-color: var(--color-red); }
+.icon-bg.black { background-color: var(--color-black); }
+
+.metric-info h3 { font-size: 0.9rem; color: #888; margin-bottom: 5px; font-weight: 600; }
+.metric-info p { font-size: 1.5rem; color: #222; font-weight: 700; margin: 0; }
+
+/* Main Split Layout */
+.dash-content-split {
+    display: flex;
+    gap: 30px;
+}
+
+.dash-main { flex: 2; }
+.dash-sidebar { flex: 1; }
+
+/* General Card */
+.dash-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.card-header h2 { font-size: 1.4rem; margin: 0; }
+.btn-text { background: none; border: none; color: var(--color-red); font-weight: 700; cursor: pointer; }
+
+/* Table */
+.table-responsive { overflow-x: auto; }
+.dash-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+.dash-table th { text-align: left; padding: 15px 10px; color: #888; font-size: 0.85rem; border-bottom: 1px solid #eee; }
+.dash-table td { padding: 15px 10px; font-size: 0.95rem; border-bottom: 1px solid #f9f9f9; }
+
+/* Status Badges */
+.status-badge { padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.status-gray { background: #eee; color: #555; }
+.status-blue { background: #e3f2fd; color: #2196f3; }
+.status-orange { background: #fff3e0; color: #ff9800; }
+.status-green { background: #e8f5e9; color: #4caf50; }
+
+/* Progress Bar */
+.progress-bar-bg { width: 100%; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--color-red); }
+
+/* Updates List */
+.update-list { list-style: none; }
+.update-list li { padding: 15px 0; border-bottom: 1px solid #f4f4f4; display: flex; gap: 15px; font-size: 0.95rem; color: #555; }
+.update-list li:last-child { border-bottom: none; }
+
+/* Manager Profile */
+.manager-profile { display: flex; align-items: center; gap: 15px; margin-top: 15px; }
+.manager-img img { width: 50px; height: 50px; border-radius: 50%; }
+.manager-details h4 { margin: 0; font-size: 1rem; }
+.manager-details p { margin: 0; font-size: 0.85rem; color: #888; }
+.contact-link { font-size: 0.8rem; color: var(--color-red); font-weight: 600; }
+
+/* Invoice List */
+.invoice-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+.invoice-item:last-child { border-bottom: none; }
+.inv-details { display: flex; flex-direction: column; }
+.inv-id { font-weight: 700; font-size: 0.9rem; }
+.inv-date { font-size: 0.8rem; color: #888; }
+.inv-amount { display: flex; flex-direction: column; align-items: flex-end; }
+.badge-red { color: red; background: #ffebeb; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-top: 5px; }
+.badge-gray { color: #555; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-top: 5px; }
+
+/* Mobile */
+@media (max-width: 900px) {
+    .dash-content-split { flex-direction: column; }
+    .dash-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}

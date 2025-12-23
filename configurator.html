@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Configurator - Digital Brain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="digitalbrain_logo.png" alt="Digital Brain Logo">
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li class="mobile-only">
+                        <a href="login.html" class="btn btn-login mobile-login-btn">Log in</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-login">Log in</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="config-hero">
+        <div class="container center-align">
+            <h1>Build Your Strategy</h1>
+            <p>Tell us your goals, and our AI-powered logic will recommend the perfect plan.</p>
+        </div>
+    </section>
+
+    <section class="config-split-section">
+        <div class="container split-wrapper">
+            
+            <div class="config-panel">
+                <h2>Build Your Strategy</h2>
+                
+                <div class="config-group">
+                    <label>1. What is your main goal?</label>
+                    <div class="pill-group">
+                        <button class="pill-btn" onclick="selectPill('goal', 'sales', this)">Sales Leads</button>
+                        <button class="pill-btn" onclick="selectPill('goal', 'awareness', this)">Brand Awareness</button>
+                        <button class="pill-btn" onclick="selectPill('goal', 'traffic', this)">Website Traffic</button>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>2. Monthly budget estimate (RM)</label>
+                    <div class="slider-wrapper">
+                        <input type="range" min="1000" max="15000" value="5000" step="500" class="custom-slider" id="budgetRange" oninput="updateBudgetDisplay(this.value)">
+                        <div class="slider-labels">
+                            <span>RM 1,000</span>
+                            <span id="budgetText" class="highlight-val">RM 5,000</span>
+                            <span>RM 15,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>3. Preferred platforms (Optional)</label>
+                    <div class="pill-group">
+                        <button class="pill-btn" onclick="togglePill(this)">TikTok</button>
+                        <button class="pill-btn" onclick="togglePill(this)">Instagram</button>
+                        <button class="pill-btn" onclick="togglePill(this)">Facebook</button>
+                        <button class="pill-btn" onclick="togglePill(this)">Google</button>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button class="btn-generate" onclick="findPackage()">Generate Package</button>
+                </div>
+            </div>
+
+            <div class="result-panel">
+                
+                <div class="cards-track" id="cardsTrack">
+                    
+                    <div class="config-card-result placeholder-card active-card" id="card-default">
+                        <div class="placeholder-content">
+                            <i class="fas fa-magic"></i>
+                            <h3>Ready to start?</h3>
+                            <p>Select your goals and budget on the left to unlock your personalized strategy.</p>
+                        </div>
+                    </div>
+
+                    <div class="config-card-result" id="card-kickstarter">
+                        <span class="badge">Starter Choice</span>
+                        <h2>The Kickstarter</h2>
+                        <p class="pkg-desc">Perfect for new businesses looking to establish a digital footprint.</p>
+                        <ul class="pkg-features">
+                            <li>Social Media Management</li>
+                            <li>3 Posts per Week</li>
+                            <li>Basic Community Management</li>
+                        </ul>
+                        <div class="pkg-price">Est. Price: RM 1,500 - 2,500</div>
+                        
+                        <a href="contact.html?package=The Kickstarter" class="btn-book">Inquire Now</a>
+                    </div>
+
+                    <div class="config-card-result" id="card-growth">
+                        <span class="badge recommended">Recommended For You</span>
+                        <h2>Growth Booster</h2>
+                        <p class="pkg-desc">Focused purely on ROI. We use paid ads to drive immediate leads.</p>
+                        <ul class="pkg-features">
+                            <li>FB & IG Ads Management</li>
+                            <li>Copywriting & Creative Design</li>
+                            <li>RM 2,000 Ad Spend Included</li>
+                        </ul>
+                        <div class="pkg-price">Est. Price: RM 3,500 - 5,000</div>
+                        
+                        <a href="contact.html?package=Growth Booster" class="btn-book">Inquire Now</a>
+                    </div>
+
+                    <div class="config-card-result" id="card-authority">
+                        <span class="badge">Brand Focus</span>
+                        <h2>Brand Authority</h2>
+                        <p class="pkg-desc">Elevate your brand image with premium content production.</p>
+                        <ul class="pkg-features">
+                            <li>Short-form Video (Reels/TikTok)</li>
+                            <li>Influencer Seeding Campaign</li>
+                            <li>Social Media Strategy</li>
+                        </ul>
+                        <div class="pkg-price">Est. Price: RM 4,000 - 6,000</div>
+                        
+                        <a href="contact.html?package=Brand Authority" class="btn-book">Inquire Now</a>
+                    </div>
+
+                    <div class="config-card-result" id="card-enterprise">
+                        <span class="badge premium">Premium</span>
+                        <h2>Enterprise Domination</h2>
+                        <p class="pkg-desc">Full-scale digital transformation for market leaders.</p>
+                        <ul class="pkg-features">
+                            <li>Omni-Channel Strategy</li>
+                            <li>Advanced SEO & Content</li>
+                            <li>Dedicated Account Manager</li>
+                        </ul>
+                        <div class="pkg-price">Est. Price: RM 8,000+</div>
+                        
+                        <a href="contact.html?package=Enterprise Domination" class="btn-book">Inquire Now</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="configurator.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
